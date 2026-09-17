@@ -1,0 +1,19 @@
+{
+  "name": "tanzeel-quran",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Premium one-to-one online Qur'an tuition website for Tanzeel Quran — trust, peace, Islamic elegance.",
+  "keywords": [
+    "quran",
+    "quran-teacher",
+    "tajweed",
+    "hifz",
+    "online-quran",
+    "tanzeel-quran"
+  ],
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "npx serve .",
+    "dev": "python -m http.server 8000"
+  }
+}

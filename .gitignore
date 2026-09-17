@@ -1,0 +1,27 @@
+# ---- Dependencies ----
+node_modules/
+
+# ---- Build output & caches ----
+dist/
+build/
+.vercel/
+.vite/
+npm-debug.log*
+yarn-error.log*
+
+# ---- Environment variables & secrets ----
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets/
+
+# ---- Editor & OS ----
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# ---- Logs ----
+*.log
