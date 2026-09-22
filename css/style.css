@@ -803,6 +803,7 @@ h1, h2, h3, h4 {
 
 .arch-frame {
   position: relative;
+  filter: drop-shadow(0 16px 32px rgba(43, 26, 18, 0.15));
 }
 
 .arch-art {
@@ -812,19 +813,21 @@ h1, h2, h3, h4 {
 
 .arch-arabic {
   position: absolute;
-  top: 8%;
+  top: 8.5%;
   left: 0;
   right: 0;
   text-align: center;
   font-family: var(--arabic);
-  font-size: clamp(1.55rem, 2.6vw, 2.15rem);
+  font-size: clamp(1.7rem, 2.8vw, 2.35rem);
+  line-height: 1.4;
+  letter-spacing: 0.02em;
   color: var(--brown-900);
   pointer-events: none;
 }
 
 .arch-caption {
   position: absolute;
-  bottom: 9%;
+  bottom: 8%;
   left: 0;
   right: 0;
   text-align: center;
@@ -834,15 +837,18 @@ h1, h2, h3, h4 {
 .arch-caption strong {
   display: block;
   font-family: var(--serif);
-  font-size: 1.45rem;
+  font-size: 1.35rem;
   font-weight: 600;
+  letter-spacing: 0.05em;
   color: var(--brown-900);
 }
 
 .arch-caption small {
-  font-size: 0.72rem;
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 0.7rem;
   font-weight: 600;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--tan);
 }
@@ -1097,6 +1103,34 @@ h1, h2, h3, h4 {
   color: var(--gold-soft);
 }
 
+.program-num {
+  display: inline-block;
+  font-family: var(--serif);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--gold);
+  border: 1px solid rgba(198, 161, 91, 0.45);
+  border-radius: 999px;
+  padding: 0.22rem 0.75rem;
+  margin-bottom: 0.9rem;
+}
+
+.program-anyone-line {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: rgba(247, 242, 232, 0.75);
+}
+
+.program-note-line {
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--brown-900);
+  margin-top: 0.5rem;
+}
+
 .program-note {
   background: linear-gradient(160deg, #D4B87C, #A67C52);
   border: none;
@@ -1122,6 +1156,147 @@ h1, h2, h3, h4 {
 .program-note-star svg {
   width: 100%;
   height: auto;
+}
+
+/* ---------- Courses: teaching method & who can join (dark) ---------- */
+.courses-extra {
+  margin-top: 4.6rem;
+  border-top: 1px solid rgba(198, 161, 91, 0.25);
+  padding-top: 3.4rem;
+}
+
+.courses-eyebrow {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.courses-h {
+  font-family: var(--serif);
+  font-size: 1.7rem;
+  line-height: 1.3;
+  color: #FFF7E9;
+  margin: 0.65rem 0 1.7rem;
+}
+
+.course-method-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.7rem;
+}
+
+.cm-step {
+  background: linear-gradient(180deg, #3A2418, #2E1C12);
+  border: 1px solid rgba(198, 161, 91, 0.25);
+  border-radius: 16px;
+  padding: 1.35rem 1.15rem;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.cm-step:hover {
+  transform: translateY(-4px);
+  border-color: rgba(198, 161, 91, 0.55);
+}
+
+.cm-num {
+  font-family: var(--serif);
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--gold);
+}
+
+.cm-step h4 {
+  font-family: var(--serif);
+  font-size: 1.12rem;
+  color: #FFF7E9;
+  margin: 0.55rem 0 0.55rem;
+}
+
+.cm-step p {
+  font-size: 0.85rem;
+  line-height: 1.62;
+  color: rgba(247, 242, 232, 0.72);
+}
+
+.course-method-steps > [data-reveal]:nth-child(2) { transition-delay: 0.08s; }
+.course-method-steps > [data-reveal]:nth-child(3) { transition-delay: 0.16s; }
+.course-method-steps > [data-reveal]:nth-child(4) { transition-delay: 0.24s; }
+
+.who-can-join {
+  margin-top: 3rem;
+}
+
+.join-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.join-col {
+  background: linear-gradient(180deg, #3A2418, #2E1C12);
+  border: 1px solid rgba(198, 161, 91, 0.25);
+  border-radius: var(--radius);
+  padding: 1.9rem 1.6rem;
+}
+
+.join-col h4 {
+  font-family: var(--serif);
+  font-size: 1.35rem;
+  color: var(--gold-soft);
+}
+
+.join-intro {
+  margin-top: 0.65rem;
+  font-size: 0.92rem;
+  font-style: italic;
+  color: rgba(247, 242, 232, 0.8);
+}
+
+.join-col ul {
+  margin-top: 1.1rem;
+}
+
+.join-col li {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: rgba(247, 242, 232, 0.88);
+  padding: 0.4rem 0;
+}
+
+.join-col li::before {
+  content: '';
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 50%;
+  background: var(--gold);
+}
+
+.join-close {
+  margin-top: 2.6rem;
+  text-align: center;
+  background: linear-gradient(160deg, #D4B87C, #A67C52);
+  border: none;
+  border-radius: var(--radius);
+  padding: 2.1rem 1.6rem;
+}
+
+.join-close h3 {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  color: var(--brown-900);
+  text-transform: uppercase;
+}
+
+.join-close p {
+  margin-top: 0.6rem;
+  font-size: 1.02rem;
+  font-style: italic;
+  color: rgba(43, 26, 18, 0.88);
 }
 
 /* ---------- Method / steps ---------- */
@@ -2060,6 +2235,11 @@ h1, h2, h3, h4 {
   .about-badge {
     right: 4px;
   }
+
+  .course-method-steps {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.6rem 1.4rem;
+  }
 }
 
 @media (max-width: 640px) {
@@ -2067,6 +2247,8 @@ h1, h2, h3, h4 {
   .programs-grid,
   .plans,
   .steps,
+  .course-method-steps,
+  .join-grid,
   .form-row,
   .footer-grid {
     grid-template-columns: 1fr;
