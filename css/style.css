@@ -1696,6 +1696,7 @@ h1, h2, h3, h4 {
 }
 
 .faq-icon {
+  display: none;
   position: relative;
   flex-shrink: 0;
   width: 1.85rem;
@@ -1731,9 +1732,7 @@ h1, h2, h3, h4 {
 }
 
 .faq-a {
-  display: grid;
-  grid-template-rows: 0fr;
-  transition: grid-template-rows 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  display: block;
 }
 
 .faq-inner {
