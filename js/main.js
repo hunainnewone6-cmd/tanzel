@@ -225,7 +225,7 @@
 
       priceNums.forEach(function (num) {
         var monthly = parseInt(num.getAttribute('data-monthly'), 10) || 0;
-        var value = isQuarterly ? Math.round(monthly * 3 * 0.9) : monthly;
+        var value = isQuarterly ? Math.round(monthly * 3 * 0.7) : monthly;
         num.textContent = '£' + value.toLocaleString('en-GB');
       });
 

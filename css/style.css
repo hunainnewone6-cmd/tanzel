@@ -855,8 +855,8 @@ h1, h2, h3, h4 {
 
 .about-badge {
   position: absolute;
-  right: -14px;
-  bottom: 42px;
+  right: 14px;
+  bottom: 68px;
   display: flex;
   align-items: center;
   gap: 0.9rem;
@@ -1855,6 +1855,89 @@ h1, h2, h3, h4 {
   box-shadow: var(--shadow-lg);
 }
 
+/* ---------- Certification & Learning ---------- */
+.cert {
+  background: linear-gradient(180deg, var(--cream-2), var(--cream));
+}
+
+.cert-card {
+  max-width: 760px;
+  margin-inline: auto;
+  text-align: center;
+  background: #FFFDF8;
+  border: 1px solid rgba(198, 161, 91, 0.35);
+  border-radius: var(--radius);
+  padding: 3rem 2.4rem;
+  box-shadow: var(--shadow-md);
+}
+
+.cert-mark {
+  color: var(--gold);
+  width: 3rem;
+  height: 3rem;
+  display: block;
+  margin: 0 auto;
+}
+
+.cert-mark svg {
+  width: 100%;
+  height: auto;
+}
+
+.cert-title {
+  font-family: var(--serif);
+  font-size: 1.9rem;
+  font-weight: 600;
+  color: var(--brown-900);
+  margin-top: 1.4rem;
+}
+
+.cert-text {
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: var(--muted);
+  margin-top: 1rem;
+}
+
+/* ---------- Contact: rabbi dua card ---------- */
+.rabbi-card {
+  text-align: center;
+}
+
+.rabbi-star {
+  color: var(--gold);
+  width: 2.8rem;
+  height: 2.8rem;
+  display: block;
+  margin: 0 auto 0.2rem;
+}
+
+.rabbi-star svg {
+  width: 100%;
+  height: auto;
+}
+
+.rabbi-arabic {
+  font-family: var(--arabic);
+  font-size: 2.3rem;
+  line-height: 1.6;
+  color: var(--brown-900);
+}
+
+.rabbi-title {
+  font-family: var(--serif);
+  font-size: 1.6rem;
+  color: var(--brown-900);
+  margin-top: 1.1rem;
+}
+
+.rabbi-sub {
+  font-size: 0.95rem;
+  font-style: italic;
+  color: var(--muted);
+  margin-top: 0.5rem;
+}
+
 .form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -2233,7 +2316,7 @@ h1, h2, h3, h4 {
   }
 
   .about-badge {
-    right: 4px;
+    right: 12px;
   }
 
   .course-method-steps {
