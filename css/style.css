@@ -584,6 +584,9 @@ h1, h2, h3, h4 {
   height: 100%;
   object-fit: cover;
   object-position: center;
+  /* Fadeout effect on the circular edge of the photo */
+  -webkit-mask-image: radial-gradient(circle, #000 72%, transparent 100%);
+  mask-image: radial-gradient(circle, #000 72%, transparent 100%);
 }
 
 .medallion-star {
