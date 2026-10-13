@@ -1549,6 +1549,21 @@ h1, h2, h3, h4 {
   margin-left: 0.3rem;
 }
 
+.price-old {
+  display: block;
+  margin-top: 0.4rem;
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--muted);
+  text-decoration: line-through;
+  text-decoration-color: rgba(43, 26, 18, 0.35);
+}
+
+.plan-featured .price-old {
+  color: rgba(247, 242, 232, 0.6);
+  text-decoration-color: rgba(247, 242, 232, 0.45);
+}
 .plan-feats {
   margin: 0.3rem 0 0.6rem;
   flex: 1;
