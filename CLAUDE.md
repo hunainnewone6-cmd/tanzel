@@ -10,6 +10,8 @@ css/style.css     All styles (2500 lines). Custom properties in :root.
 js/main.js        All interactivity (~300 lines), vanilla JS, no deps.
 assets/favicon.svg
 src/image1.jpeg   "Read Your Quran" hero image
+src/shot_about.png
+src/shot_top.png
 vercel.json       Vercel config (no build/install command, cleanUrls)
 ```
 
@@ -54,14 +56,19 @@ Quarterly display (auto-computed, 30% off): £74 / £95 / £137. "Most popular" 
 ### About section (css/style.css)
 - `.arch-arabic` and `.arch-caption` repositioned to stay inside the arch; caption sub-text made larger.
 
+### Repository hygiene
+- **Removed 244 accidentally-tracked Edge browser profile files** (15 MB of Crashpad, Cache, Code Cache, Extensions, etc.) from git tracking. They remain on disk locally; no user data deleted.
+- **Updated `.gitignore`** with new rules:
+  - `src/edgeprofile/`
+  - `*.pma`, `*.pma-*`
+  - `*.swp`, `*.swo`, `.scratch/`
+
 ## Free-trial buttons
 All three "Start with a free trial" buttons link to `#contact` (in-page anchor, scrolls to the booking form). Preserved unchanged.
 
 ## Known issues / notes
-- `src/edgeprofile/` is a stray browser (Edge) profile directory accidentally committed to the repo (crashpads, shader caches, etc.). **Not part of the site, not gitignored, not touched in this change.** Recommend gitignoring and removing it in a separate cleanup — do not delete without confirming it's not tracked elsewhere.
 - No test suite; changes verified by serving and inspecting in-browser at 1440px / 768px / 375px.
 
 ## Next steps
-1. Confirm the `src/edgeprofile/` cleanup separately (gitignore + remove from tracking).
-2. Push to the `main` branch and trigger the Vercel deploy **only with owner approval** (no push or deploy was done in this change).
-3. If desired, generate an "unslop story" morphing video for the About/pricing sections via the UNSLOP skill.
+1. Push to the `main` branch and trigger the Vercel deploy **only with owner approval** (no push or deploy was done in this change — branch `claude/wonderful-bhabha-76afe3` pushed to remote).
+2. If desired, generate an "unslop story" morphing video for the About/pricing sections via the UNSLOP skill.
