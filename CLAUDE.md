@@ -66,9 +66,88 @@ Quarterly display (auto-computed, 30% off): £74 / £95 / £137. "Most popular" 
 ## Free-trial buttons
 All three "Start with a free trial" buttons link to `#contact` (in-page anchor, scrolls to the booking form). Preserved unchanged.
 
+## Pull Request #1 — CHANGE 02 integration
+
+| Field | Value |
+|---|---|
+| **PR URL** | https://github.com/hunainnewone6-cmd/tanzel/pull/1 |
+| **PR Number** | #1 |
+| **Source branch** | `claude/wonderful-bhabha-76afe3` |
+| **Target branch** | `main` |
+| **Merge status** | **MERGED** (2026-11-27T11:41:06Z) |
+| **Merge commit** | `8efc6b94f02f614d0185e5bdfd06d96f70abcb8c` |
+| **Merge strategy** | Clean merge (no conflicts, fast-forward compatible) |
+| **Merged by** | `hunainnewone6-cmd` |
+
+### Checks & tests performed
+| Check | Result |
+|---|---|
+| Vercel build | SUCCESS (preview deployed) |
+| Vercel Preview Comments | SUCCESS |
+| Manual browser test (1440px) | All pricing cards render, About text contained |
+| Manual browser test (768px) | Responsive, no overflow |
+| Manual browser test (375px) | Responsive, no horizontal scroll |
+| Browser console | No errors/warnings |
+| Stale reference grep | No old pricing (£40/£55/£70) or durations (45/50/45-60 min) found |
+| `src/edgeprofile/` tracking | 0 files tracked on main |
+| `.gitignore` rules | Applied and effective |
+
+### Commits on main
+1. `9888e32` — `refactor: update pricing, fix About arch overflow, clean tracked browser profile`
+2. `036c6d5` — `docs: update CLAUDE.md with verified state (edgeprofile removed, gitignore updated)`
+3. `8efc6b9` — `Merge pull request #1`
+
+## Phase 03 — Production Readiness Audit (2026-11-27)
+
+### Repository state
+- Branch: `main` @ `8efc6b9` (includes both CHANGE 02 commits `9888e32`, `036c6d5`).
+- Working tree clean; `src/edgeprofile/` fully untracked; `.gitignore` in place.
+- No API keys or secrets in tracked files. No unnecessary external dependencies.
+
+### Technical audit
+| Check | Result |
+|---|---|
+| No build step | `vercel.json` — `buildCommand: null`, `installCommand: null`, `cleanUrls: true` — correct for static site |
+| `package.json` | No runtime dependencies; `dev` script uses `python -m http.server` (unavailable on Windows — use `npm start` instead). No production impact |
+| Fonts | Google Fonts (Cormorant Garamond, Inter, Amiri) via `<link>` with `display=swap` and `preconnect`. No local font files |
+| External resources | Google Fonts only. No analytics, no ad scripts, no third-party JS |
+| Image assets | `src/image1.jpeg` (hero) — only image. No broken paths |
+| Accessibility | Skip link, `aria-label`s on nav/regions, `aria-expanded` on accordion/FAQ, semantic headings |
+| SEO | `<title>` and `meta description` present. **Missing:** `og:image`, `og:url`, `twitter:card` — recommend adding |
+| Console | No errors or warnings on production URL |
+
+### Cross-device verification (local, 1440/1024/768/430/375 px)
+| Viewport | Pricing | About overflow | Horizontal scroll |
+|---|---|---|---|
+| 1440px | Equal card heights ✓ | Contained ✓ | None ✓ |
+| 1024px | Equal card heights ✓ | Contained ✓ | None ✓ |
+| 768px | Stacked (1-col) | Contained ✓ | None ✓ |
+| 430px | Stacked (1-col) | Contained ✓ | None ✓ |
+| 375px | Stacked (1-col) | Contained ✓ | None ✓ |
+
+Quarterly toggle: `35×3×0.7=74`, `45×3×0.7=95`, `65×3×0.7=137` — **correct**.
+
+### Production site status
+`tanzelq.vercel.app` is still serving **pre-CHANGE 02** code (old prices £40/£55/£70, old durations 45/50/45–60 min). A deploy is required to update production.
+
+### Vercel deployment configuration
+- Project: `tanzel_q` (linked to `hunainnewone6-cmd/tanzel` repo on GitHub)
+- Production branch: `main`
+- Build command: none (static)
+- Environment variables: none required
+- Latest production deployment: pre-CHANGE 02 commit
+- Preview deployment: CHANGE 02 commit — build **SUCCESS**
+- Vercel CLI auth token is expired — run `npx vercel login` before deploying
+
+### Remaining recommendations
+1. **Deploy to production** — awaiting owner approval (Vercel CLI login required first).
+2. **Add SEO metadata** — `og:image`, `og:url`, `twitter:card` in `<head>`.
+3. **Fix `package.json` dev script** — replace `python -m http.server` with a working local dev command (e.g. `npx serve .`).
+4. **No code changes required for production readiness** — current `main` is deploy-ready.
+
 ## Known issues / notes
 - No test suite; changes verified by serving and inspecting in-browser at 1440px / 768px / 375px.
 
 ## Next steps
-1. Push to the `main` branch and trigger the Vercel deploy **only with owner approval** (no push or deploy was done in this change — branch `claude/wonderful-bhabha-76afe3` pushed to remote).
+1. **Vercel production deploy** — **awaiting explicit owner approval** (PR preview deployed successfully, no auto-deploy configured).
 2. If desired, generate an "unslop story" morphing video for the About/pricing sections via the UNSLOP skill.
