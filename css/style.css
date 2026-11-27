@@ -787,23 +787,23 @@ h1, h2, h3, h4 {
 
 .arch-arabic {
   position: absolute;
-  top: 22%;
-  left: 0;
-  right: 0;
+  top: 30%;
+  left: 50%;
+  width: 44%;
+  transform: translateX(-50%);
   text-align: center;
   font-family: var(--arabic);
-  font-size: clamp(1.7rem, 2.8vw, 2.35rem);
-  line-height: 1.4;
-  letter-spacing: 0.02em;
+  font-size: clamp(1.45rem, 2.4vw, 2rem);
+  line-height: 1.65;
   color: var(--brown-900);
   pointer-events: none;
 }
 
 .arch-caption {
   position: absolute;
-  bottom: 10px;
-  left: 0;
-  right: 0;
+  bottom: 24px;
+  left: 20%;
+  right: 20%;
   text-align: center;
   pointer-events: none;
 }
@@ -811,20 +811,20 @@ h1, h2, h3, h4 {
 .arch-caption strong {
   display: block;
   font-family: var(--serif);
-  font-size: 1.25rem;
-  line-height: 1.12;
+  font-size: 1.3rem;
+  line-height: 1.2;
   font-weight: 600;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.04em;
   color: var(--brown-900);
 }
 
 .arch-caption small {
   display: block;
-  margin-top: 0.25rem;
-  font-size: 0.6rem;
-  line-height: 1.35;
+  margin-top: 0.4rem;
+  font-size: 0.68rem;
+  line-height: 1.4;
   font-weight: 600;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--tan);
 }
@@ -2356,11 +2356,11 @@ h1, h2, h3, h4 {
   }
 
   .arch-caption strong {
-    font-size: 1.15rem;
+    font-size: 1.2rem;
   }
 
   .arch-caption small {
-    font-size: 0.62rem;
+    font-size: 0.7rem;
   }
 
   .slide {

@@ -25,3 +25,13 @@ Thumbs.db
 
 # ---- Logs ----
 *.log
+
+# ---- Browser profiles & local session data ----
+src/edgeprofile/
+*.pma
+*.pma-*
+
+# ---- Editor & OS (extended) ----
+*.swp
+*.swo
+.scratch/
